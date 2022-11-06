@@ -1,0 +1,42 @@
+image: node:14
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Build
+          script: # https://create-react-app.dev/docs/advanced-configuration/
+            - git submodule init
+            - git submodule update --init
+            - yarn install
+            - export INLINE_RUNTIME_CHUNK=false
+            - export DISABLE_NEW_JSX_TRANSFORM=true
+            - export GENERATE_SOURCEMAP=true
+            - export DISABLE_ESLINT_PLUGIN=true
+            - yarn build
+          artifacts:
+            - build/**
+      - step:
+          name: Deploy to S3
+          script: # https://bitbucket.org/atlassian/aws-s3-deploy/src/master/README.md
+            - pipe: atlassian/aws-s3-deploy:0.3.7
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: "us-east-1" # $AWS_DEFAULT_REGION
+                S3_BUCKET: "perfpie-static-assets/website/js/hubspot-form-submit-v3"
+                CACHE_CONTROL: "max-age=604800" # One week
+                DELETE_FLAG: "true"
+                LOCAL_PATH: "build"
+          artifacts:
+            - dist/**
+      - step:
+          name: Invalidate Cloudfront Cache
+          script: # https://bitbucket.org/atlassian/aws-cloudfront-invalidate/src/master/
+            - pipe: atlassian/aws-cloudfront-invalidate:0.6.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: "global" # $AWS_DEFAULT_REGION
+                DISTRIBUTION_ID: "EN558XXMVVL3O" # static.cdn.mayple.com
+                PATHS: "/website/js/hubspot-form-submit-v3/hubspot-form-submit-v3.js"

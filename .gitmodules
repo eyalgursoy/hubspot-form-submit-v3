@@ -1,0 +1,3 @@
+[submodule "growl-types"]
+	path = growl-types
+	url = git@bitbucket.org:perfpie/growl-types.git
