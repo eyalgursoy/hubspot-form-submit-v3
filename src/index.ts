@@ -2,6 +2,7 @@ import fetch from 'cross-fetch';
 
 import { FinalHubSpotData, FormSubmitResponse, HubSpotContext, HubSpotData, HubSpotField } from './types';
 import { collectFormData, getOptions, handleJsonResponse, validateRequiredParameter } from './logic';
+import { HUBSPOT_FORM_SUBMIT_URL } from './consts';
 const hubspotFormSubmit = async (
   portalId: string,
   formGuid: string,
@@ -18,7 +19,7 @@ const hubspotFormSubmit = async (
 
   // submit the data
   const stringifyData = JSON.stringify(finalData);
-  const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`;
+  const url = `${HUBSPOT_FORM_SUBMIT_URL}${portalId}/${formGuid}`;
 
   try {
     const options = getOptions(stringifyData);

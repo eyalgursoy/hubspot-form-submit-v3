@@ -9,7 +9,7 @@ export const validateRequiredParameter = (parameterName: string, parameterValue:
   }
 };
 
-export const validateHubspotCookie = (): string => {
+const validateHubspotCookie = (): string => {
   // Get hubspot cookie. Without it, form submission fails
   const hutk = cookies.get(HUBSPOT_UTK_COOKIE);
   if (!hutk) {
