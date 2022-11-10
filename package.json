@@ -1,6 +1,6 @@
 {
   "name": "@mayple/hubspot-form-submit-v3",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "SDK library for Mayple websites",
   "main": "build/hubspot-form-submit-v3.js",
   "types": "build/types/index.d.ts",

@@ -1,6 +1,6 @@
 /*!
  * 
- *   @mayple/hubspot-form-submit-v3 v1.0.5
+ *   @mayple/hubspot-form-submit-v3 v1.0.6
  *   git@github.com:eyalgursoy/hubspot-form-submit-v3.git
  *
  *   Copyright (c) Eyal Gursoy  and project contributors.
