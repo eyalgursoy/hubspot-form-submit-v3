@@ -51,6 +51,8 @@ Read more about it here: [Where can I find my Hubspot PortalId?](https://knowled
 A unique identifier representing the form in Hubspot (You will see it when you'll create the form on Hubspot) 
 
 ## Usage
+The provided examples are in TypeScript - if you are using plain JS, just remove the types definitions.
+
 ```
 const HUBSPOT_PORTAL_ID = 'your_hubspot_portal_id';
 const FORM_ID = 'xxxxxxxx-xxxx-xxxx-xxxx-3fff98103f72';
@@ -98,5 +100,4 @@ const fieldsData: HubspotField[] = [{
    value: 'some value'
 }];
 ```
-
-BTW, the provided examples are in TypeScript - if you are using plain JS, just remove the types definitions  
+ 
