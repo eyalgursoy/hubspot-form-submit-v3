@@ -48,7 +48,12 @@ module.exports = {
       },
     ],
   },
-  plugins: [new CleanWebpackPlugin(), new PrettierPlugin(), new webpack.BannerPlugin(banner)],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new PrettierPlugin(),
+    new webpack.BannerPlugin(banner),
+  ],
   resolve: {
     extensions: ['.ts', '.js', '.json'],
   },
