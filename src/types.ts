@@ -1,10 +1,10 @@
-interface HubSpotField {
+interface HubspotField {
   name: string;
   value: any;
   objectTypeId?: string;
 }
 
-interface HubSpotContext {
+interface HubspotContext {
   hutk?: string;
   ipAddress?: string;
   pageName?: string;
@@ -14,14 +14,14 @@ interface HubSpotContext {
   goToWebinarWebinarKey?: string;
 }
 
-interface HubSpotData {
-  fields: HubSpotField[];
-  context?: HubSpotContext;
+interface HubspotData {
+  fields: HubspotField[];
+  context?: HubspotContext;
   submittedAt?: number;
   // legalConsentOptions?: HubSpotLegalConsentOptions;
 }
 
-interface FinalHubSpotData extends HubSpotData {
+interface FinalHubspotData extends HubspotData {
   portalId: string;
   formGuid: string;
 }
@@ -38,4 +38,12 @@ type FormSubmitResponse = {
   errors?: FormSubmitError[];
 };
 
-export type { HubSpotField, HubSpotContext, HubSpotData, FinalHubSpotData, FormSubmitResponse };
+export type {
+  HubspotField,
+  HubspotContext,
+  HubspotData,
+  FinalHubspotData,
+  FormSubmitResponse,
+  SubmitStatus,
+  FormSubmitError,
+};

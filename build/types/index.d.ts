@@ -1,4 +1,4 @@
-import { FinalHubSpotData, FormSubmitResponse, HubSpotContext, HubSpotData, HubSpotField } from './types';
-declare const hubspotFormSubmit: (portalId: string, formGuid: string, fields: HubSpotField[], context?: HubSpotContext) => Promise<FormSubmitResponse>;
-export type { HubSpotField, HubSpotContext, HubSpotData, FinalHubSpotData };
+import { FinalHubspotData, FormSubmitResponse, HubspotContext, HubspotData, HubspotField } from './types';
+declare const hubspotFormSubmit: (portalId: string, formGuid: string, fields: HubspotField[], context?: HubspotContext) => Promise<FormSubmitResponse>;
+export type { HubspotField, HubspotContext, HubspotData, FinalHubspotData };
 export default hubspotFormSubmit;

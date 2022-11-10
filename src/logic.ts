@@ -1,7 +1,7 @@
 import cookies from 'js-cookie';
 
 import { HUBSPOT_UTK_COOKIE } from './consts';
-import { FinalHubSpotData, FormSubmitResponse, HubSpotContext, HubSpotField } from './types';
+import { FinalHubspotData, FormSubmitResponse, HubspotContext, HubspotField } from './types';
 
 export const validateRequiredParameter = (parameterName: string, parameterValue: any): void => {
   if (!parameterValue) {
@@ -23,14 +23,14 @@ const validateHubspotCookie = (): string => {
 export const collectFormData = (
   portalId: string,
   formGuid: string,
-  fields: HubSpotField[],
-  context?: HubSpotContext
-): FinalHubSpotData => {
+  fields: HubspotField[],
+  context?: HubspotContext
+): FinalHubspotData => {
   const hutk = validateHubspotCookie();
 
   const submittedAt = new Date().getTime();
 
-  const finalContext: HubSpotContext = {
+  const finalContext: HubspotContext = {
     // Add default data to context
     hutk,
     pageUri: window?.location?.href,
@@ -39,7 +39,7 @@ export const collectFormData = (
     ...context,
   };
 
-  const finalData: FinalHubSpotData = {
+  const finalData: FinalHubspotData = {
     fields,
     context: finalContext,
     submittedAt,

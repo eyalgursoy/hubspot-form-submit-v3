@@ -1,21 +1,21 @@
 {
   "name": "@mayple/hubspot-form-submit-v3",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "SDK library for Mayple websites",
-  "main": "build/index.js",
+  "main": "build/hubspot-form-submit-v3.js",
   "types": "build/types/index.d.ts",
   "scripts": {
     "build": "webpack && tsc",
     "test": "jest --silent",
     "coverage": "yarn run test -- --coverage",
     "prepare": "yarn run build",
-    "trypublish": "npm publish || true",
+    "trypublish": "npm publish  || true",
     "prettier-fix": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json}\"",
     "precommit": "./precommit.sh"
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:perfpie/hubspot-form-submit-v3.git"
+    "url": "git@github.com:eyalgursoy/hubspot-form-submit-v3.git"
   },
   "author": "Eyal Gursoy<eyal.gursoy@mayple.com>",
   "license": "MIT",

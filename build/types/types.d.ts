@@ -1,9 +1,9 @@
-interface HubSpotField {
+interface HubspotField {
     name: string;
     value: any;
     objectTypeId?: string;
 }
-interface HubSpotContext {
+interface HubspotContext {
     hutk?: string;
     ipAddress?: string;
     pageName?: string;
@@ -12,12 +12,12 @@ interface HubSpotContext {
     sfdcCampaignId?: string;
     goToWebinarWebinarKey?: string;
 }
-interface HubSpotData {
-    fields: HubSpotField[];
-    context?: HubSpotContext;
+interface HubspotData {
+    fields: HubspotField[];
+    context?: HubspotContext;
     submittedAt?: number;
 }
-interface FinalHubSpotData extends HubSpotData {
+interface FinalHubspotData extends HubspotData {
     portalId: string;
     formGuid: string;
 }
@@ -31,4 +31,4 @@ declare type FormSubmitResponse = {
     message?: string;
     errors?: FormSubmitError[];
 };
-export type { HubSpotField, HubSpotContext, HubSpotData, FinalHubSpotData, FormSubmitResponse };
+export type { HubspotField, HubspotContext, HubspotData, FinalHubspotData, FormSubmitResponse, SubmitStatus, FormSubmitError, };

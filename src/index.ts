@@ -1,13 +1,13 @@
 import fetch from 'cross-fetch';
 
-import { FinalHubSpotData, FormSubmitResponse, HubSpotContext, HubSpotData, HubSpotField } from './types';
+import { FinalHubspotData, FormSubmitResponse, HubspotContext, HubspotData, HubspotField } from './types';
 import { collectFormData, getOptions, handleJsonResponse, validateRequiredParameter } from './logic';
 import { HUBSPOT_FORM_SUBMIT_URL } from './consts';
 const hubspotFormSubmit = async (
   portalId: string,
   formGuid: string,
-  fields: HubSpotField[],
-  context?: HubSpotContext
+  fields: HubspotField[],
+  context?: HubspotContext
 ): Promise<FormSubmitResponse> => {
   // parameters validation
   validateRequiredParameter('portalId', portalId);
@@ -32,6 +32,6 @@ const hubspotFormSubmit = async (
   }
 };
 
-export type { HubSpotField, HubSpotContext, HubSpotData, FinalHubSpotData };
+export type { HubspotField, HubspotContext, HubspotData, FinalHubspotData };
 
 export default hubspotFormSubmit;
