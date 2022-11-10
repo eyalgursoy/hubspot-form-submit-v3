@@ -1,6 +1,6 @@
 {
   "name": "@mayple/hubspot-form-submit-v3",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "SDK library for Mayple websites",
   "main": "build/hubspot-form-submit-v3.js",
   "types": "build/types/index.d.ts",
@@ -9,7 +9,7 @@
     "test": "jest --silent",
     "coverage": "yarn run test --silent --coverage",
     "prepare": "yarn run build",
-    "trypublish": "npm publish --access=public || true",
+    "trypublish": "npm publish --access=public",
     "prettier-fix": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json}\"",
     "precommit": "./precommit.sh"
   },
